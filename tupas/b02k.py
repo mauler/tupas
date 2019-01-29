@@ -33,11 +33,12 @@ class B02KInfo(NamedTuple):
 
 def declare_info(info: Dict) -> B02KInfo:
     """
-    Declares a new :class:`B02KInfo` from a :class:`dict` ignoring keys that are not
-    attributes.
+    Declares a new :class:`B02KInfo` from a :class:`dict` ignoring keys that
+    are not attributes.
 
     :param info: Dictionary to be used.
-    :return: New :class:`B02kInfo` using the attributes available on the dictionary.
+    :return: New :class:`B02kInfo` using the attributes available on the
+        dictionary.
     """
     params = {k: v for k, v in info.items() if k in B02K_KEYS}
     return B02KInfo(**params)
@@ -47,8 +48,8 @@ def calculate_signature(b02kinfo: B02KInfo, secret: str) -> str:
     """
     Calculates the and sign the b02kinfo using a secret.
 
-    This function concats all B02K with information with "&" between them and append the
-    secret input.
+    This function concats all B02K with information with "&" between them and
+    append the secret input.
 
     :param b02kinfo: B02K information.
     :param secret: Salt to be used on the sign.

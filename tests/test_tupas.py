@@ -56,8 +56,8 @@ class B02KTest(BaseTest):
             b02k.get_qs_dict('name=paulo&name=chaves')
 
     def test_format_names(self):
-        self.assertEquals(b02k.format_names('paulo chaves'),
-                          ['Paulo', 'Chaves'])
+        self.assertEqual(b02k.format_names('paulo chaves'),
+                         ['Paulo', 'Chaves'])
 
         # Tests failsafe in case of wrong formated fullname (more than 2 names)
         self.assertEquals(b02k.format_names('paulo r m chaves'),
